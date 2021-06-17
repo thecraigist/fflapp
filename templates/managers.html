@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Managers{% endblock %}</h1>
+  <a class="action" href="{{ url_for('home') }}">Back</a>
+{% endblock %}
+
+{% block content %}
+  {% for manager in managers %}
+    <article class="post">
+      <p class="body">{{ manager }}</p>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
